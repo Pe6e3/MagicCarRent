@@ -8,6 +8,6 @@ public class CarClientJournal :BaseEntity
     public Client? Client { get; set; }
     public DateTime? BeginRent { get; set; }
     public DateTime? EndRent { get; set; }
-    public Tax? Tax { get; set; }
+    public Discount? Discount { get; set; }
     public Double RentBill { get; set; }
 }

@@ -4,6 +4,7 @@ public class Car : BaseEntity
 {
     public string? Model { get; set; }
     public string? Brand { get; set; }
+    public int Year { get; set; }
     public Color? CarColor { get; set; }
     public double Cost { get; set; }
     public double TotalRentTime { get; set; }
