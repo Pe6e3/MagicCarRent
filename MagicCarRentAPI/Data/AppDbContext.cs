@@ -21,6 +21,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Car>().HasData(
             new Car()
             {
+                Id = 1,
                 Brand = "Toyota",
                 Model = "Mark II",
                 Year = 1995,
@@ -28,7 +29,8 @@ public class AppDbContext : DbContext
                 Cost = 2000
             },
             new Car()
-            {
+            {   
+                Id = 2,
                 Brand = "Honda",
                 Model = "Civic",
                 Year = 2010,
@@ -37,6 +39,7 @@ public class AppDbContext : DbContext
             },
             new Car()
             {
+                Id = 3,
                 Brand = "Ford",
                 Model = "Mustang",
                 Year = 2015,
@@ -45,6 +48,7 @@ public class AppDbContext : DbContext
             },
             new Car()
             {
+                Id = 4,
                 Brand = "Chevrolet",
                 Model = "Camaro",
                 Year = 2018,
@@ -53,6 +57,7 @@ public class AppDbContext : DbContext
             },
             new Car()
             {
+                Id = 5,
                 Brand = "BMW",
                 Model = "M5",
                 Year = 2020,
@@ -63,52 +68,62 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Client>().HasData(
             new Client()
             {
+                Id = 1,
                 Name = "John",
                 Lastname = "Doe"
             },
             new Client()
             {
+                Id = 2,
                 Name = "Alice",
                 Lastname = "Smith"
             },
             new Client()
             {
+                Id = 3,
                 Name = "Michael",
                 Lastname = "Johnson"
             },
             new Client()
             {
+                Id = 4,
                 Name = "Emily",
                 Lastname = "Brown"
             },
             new Client()
             {
+                Id = 5,
                 Name = "David",
                 Lastname = "Wilson"
             });
         modelBuilder.Entity<Discount>().HasData(
             new Discount()
             {
+                Id = 1,
                 DiscountName = "Скидка 1-й уровень",
                 DiscountRate = 0.05
             },
             new Discount()
             {
+                Id = 2,
                 DiscountName = "Скидка 2-й уровень",
                 DiscountRate = 0.10
             },
             new Discount()
             {
+                Id = 3,
                 DiscountName = "Скидка 3-й уровень",
                 DiscountRate = 0.15
             },
             new Discount()
             {
+                Id = 4,
                 DiscountName = "Скидка 4-й уровень",
                 DiscountRate = 0.20
             },
             new Discount()
             {
+                Id = 5,
                 DiscountName = "Скидка 5-й уровень",
                 DiscountRate = 0.25
             });
