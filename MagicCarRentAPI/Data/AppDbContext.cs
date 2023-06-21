@@ -1,6 +1,5 @@
 ﻿using MagicCarRentAPI.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Drawing;
 
 namespace MagicCarRentAPI.Data;
 
@@ -87,12 +86,32 @@ public class AppDbContext : DbContext
                 Name = "David",
                 Lastname = "Wilson"
             });
-
         modelBuilder.Entity<Discount>().HasData(
             new Discount()
             {
-                DiscountName = "Скидка 1й уровень",
+                DiscountName = "Скидка 1-й уровень",
                 DiscountRate = 0.05
-            }
+            },
+            new Discount()
+            {
+                DiscountName = "Скидка 2-й уровень",
+                DiscountRate = 0.10
+            },
+            new Discount()
+            {
+                DiscountName = "Скидка 3-й уровень",
+                DiscountRate = 0.15
+            },
+            new Discount()
+            {
+                DiscountName = "Скидка 4-й уровень",
+                DiscountRate = 0.20
+            },
+            new Discount()
+            {
+                DiscountName = "Скидка 5-й уровень",
+                DiscountRate = 0.25
+            });
+
     }
 }
