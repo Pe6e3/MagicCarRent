@@ -1,0 +1,60 @@
+﻿@model MagicCarRentAPI.Entities.DTO.CarClientJournalDTO
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CarClientJournal</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClientID" class="control-label"></label>
+                <select asp-for="ClientID" class="form-control" asp-items="ViewBag.ClientID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarID" class="control-label"></label>
+                <select asp-for="CarID" class="form-control" asp-items="ViewBag.CarID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BeginRent" class="control-label"></label>
+                <input asp-for="BeginRent" class="form-control" value="@DateTime.Now-2" />
+                <span asp-validation-for="BeginRent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndRent" class="control-label"></label>
+                <input asp-for="EndRent" class="form-control" value="@DateTime.Now" />
+                <span asp-validation-for="EndRent" class="text-danger"></span>
+            </div>
+            @*            <div class="form-group">
+            <label asp-for="RentBill" class="control-label"></label>
+            <input asp-for="RentBill" class="form-control" />
+            <span asp-validation-for="RentBill" class="text-danger"></span>
+            </div>
+            *@
+            <div class="form-group">
+                <label asp-for="DiscountName" class="control-label"></label>
+                <select asp-for="DiscountName" class="form-control" asp-items="ViewBag.Discount"></select>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

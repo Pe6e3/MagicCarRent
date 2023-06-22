@@ -26,7 +26,8 @@ public class AppDbContext : DbContext
                 Model = "Mark II",
                 Year = 1995,
                 CarColor = Car.Color.Black,
-                Cost = 2000
+                CostDay = 2000,
+                CostHour = 350
             },
             new Car()
             {   
@@ -35,7 +36,8 @@ public class AppDbContext : DbContext
                 Model = "Civic",
                 Year = 2010,
                 CarColor = Car.Color.White,
-                Cost = 2200
+                CostDay = 2200,
+                CostHour = 400
             },
             new Car()
             {
@@ -44,7 +46,8 @@ public class AppDbContext : DbContext
                 Model = "Mustang",
                 Year = 2015,
                 CarColor = Car.Color.Red,
-                Cost = 5000
+                CostDay = 5000,
+                CostHour = 800
             },
             new Car()
             {
@@ -53,7 +56,8 @@ public class AppDbContext : DbContext
                 Model = "Camaro",
                 Year = 2018,
                 CarColor = Car.Color.Yellow,
-                Cost = 7000
+                CostDay = 7000,
+                CostHour = 1000
             },
             new Car()
             {
@@ -62,7 +66,8 @@ public class AppDbContext : DbContext
                 Model = "M5",
                 Year = 2020,
                 CarColor = Car.Color.Blue,
-                Cost = 6000
+                CostDay = 6000,
+                CostHour = 900
             });
 
         modelBuilder.Entity<Client>().HasData(

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MagicCarRentAPI.Entities.CarClientJournal>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-controller="CarClientJournals" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Car)</th>
+            <th>@Html.DisplayNameFor(model => model.Client)</th>
+            <th>@Html.DisplayNameFor(model => model.BeginRent)</th>
+            <th>@Html.DisplayNameFor(model => model.EndRent)</th>
+            <th>Продолжительность аренды, дней</th>
+            <th>@Html.DisplayNameFor(model => model.RentBill)</th>
+            <th>@Html.DisplayNameFor(model => model.Discount.DiscountName)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item?.Car?.Brand @item?.Car?.Model</td>
+                <td>@item?.Client?.Name @item?.Client?.Lastname</td>
+                <td>@Html.DisplayFor(modelItem => item.BeginRent)</td>
+                <td>@Html.DisplayFor(modelItem => item.EndRent)</td>
+                <td>@Math.Floor((item.EndRent.Value - item.BeginRent.Value).TotalDays)</td>
+                <td>@Html.DisplayFor(modelItem => item.RentBill)</td>
+                <td>@item?.Discount?.DiscountName @item?.Discount?.DiscountRate.ToString("0%")</td>
+                <td>
+                <td>
+                    <a asp-controller="CarClientJournals" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-controller="CarClientJournals" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-controller="CarClientJournals" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
