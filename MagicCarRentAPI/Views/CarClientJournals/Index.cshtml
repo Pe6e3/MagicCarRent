@@ -10,21 +10,21 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.Car)</th>
-            <th>@Html.DisplayNameFor(model => model.Client)</th>
-            <th>@Html.DisplayNameFor(model => model.BeginRent)</th>
-            <th>@Html.DisplayNameFor(model => model.EndRent)</th>
-            <th>Продолжительность аренды, дней</th>
-            <th>@Html.DisplayNameFor(model => model.RentBill)</th>
-            <th>@Html.DisplayNameFor(model => model.Discount.DiscountName)</th>
+        <tr class="text-center">
+            <th>Машина</th>
+            <th>Клиент</th>
+            <th>Начало аренды</th>
+            <th>Конец аренды</th>
+            <th style="width:30px;">Аренда дней</th>
+            <th>Стоимость аренды</th>
+            <th>Размер скидки</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+            <tr class="text-center">
                 <td>@item?.Car?.Brand @item?.Car?.Model</td>
                 <td>@item?.Client?.Name @item?.Client?.Lastname</td>
                 <td>@Html.DisplayFor(modelItem => item.BeginRent)</td>
