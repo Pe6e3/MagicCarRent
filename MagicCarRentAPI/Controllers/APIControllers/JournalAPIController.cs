@@ -16,34 +16,12 @@ public class JournalAPIController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetJournal()
-    {
-        IEnumerable<Journal> journal = await db.Journal.ToListAsync();
+    public async Task<IActionResult> GetJournal() => Ok(await db.Journal.Include("Car").ToListAsync());
 
-        return Ok(journal);
-    }
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetLineJournal(int id) => Ok(await db.Journal.FirstOrDefaultAsync(j => j.Id == id));
 
-    //[HttpGet]
-    //public IEnumerable<Villa> GetVillas()
-    //{
-    //    return new List<Villa>{
-    //        new Villa()
-    //        {
-    //            Id = 1,
-    //            Name = "Pool View"
-    //        },
-    //        new Villa()
-    //        {
-    //            Id = 2,
-    //            Name = "Beach View"
-    //        },
-    //            new Villa()
-    //        {
-    //            Id = 3,
-    //            Name = "Sky View"
-    //        }
+    [HttpGet("{carModel}")]
+    public async Task<IActionResult> GetLinesByCar([FromRoute] string carModel) => Ok(await db.Journal.Include(x => x.Car).Where(x => x.Car.Model == carModel).ToListAsync());
 
-    //    };
-
-    //}
 }
