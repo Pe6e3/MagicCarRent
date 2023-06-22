@@ -2,7 +2,7 @@
 
 namespace MagicCarRentAPI.Entities.DTO;
 
-public class CarClientJournalDTO : BaseEntity
+public class JournalDTO : BaseEntity
 {
 
     [Display(Name = "Стоимость часа")] public double CostHour { get; set; }

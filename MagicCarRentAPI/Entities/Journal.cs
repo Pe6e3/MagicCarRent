@@ -1,6 +1,6 @@
 ﻿namespace MagicCarRentAPI.Entities;
 
-public class CarClientJournal :BaseEntity
+public class Journal :BaseEntity
 {
     public int ClientID { get; set; }
     public int CarID { get; set; }

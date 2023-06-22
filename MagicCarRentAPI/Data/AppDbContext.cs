@@ -11,7 +11,7 @@ public class AppDbContext : DbContext
 
     public DbSet<Car> Cars { get; set; }
     public DbSet<Client> Clients { get; set; }
-    public DbSet<CarClientJournal> ClientJournals { get; set; }
+    public DbSet<Journal> Journal { get; set; }
     public DbSet<Discount> Discounts { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
